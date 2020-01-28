@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>Title</title>
+    <style>
+        .thtdv{width:100%;text-align:center;}
+        .thtdv_img{max-width:100%;height:auto;}
+
+    </style>
+
+    <script type="text/javascript" src="/static/js/jquery-3.4.1.js"></script>
+
+</head>
+<body>
+<div id="bk" class="thtdv">
+
+    <script language=javascript>
+var numAD=0;
+var imgAD = new Array();
+imgAD[0] = "/static/pics/pg1_1.jpg";
+imgAD[1] = "/static/pics/pg1_2.jpg";
+imgAD[2] = "/static/pics/pg1_3.jpg";
+function setTransition(){
+  if(document.all){
+    u.filters.revealTrans.Transition=Math.floor(Math.random()*23);
+    u.filters.revealTrans.apply();
+  }
+}
+function playTransition(){
+  if(document.all){
+    u.filters.revealTrans.play();
+  }
+}
+function nextAD(){
+  setTransition();
+  document.u.src=imgAD[numAD];
+  playTransition();
+  if(numAD >= imgAD.length-1){
+    numAD=0;
+  }else{
+    numAD++;
+  }
+  setTimeout("nextAD()",1000);
+}
+    </script>
+    <img src="/static/pics/pg1_1.jpg"  width="200" height="100"  name="u" id="u" style="width:100%; height:auto; FILTER: revealTrans(duration=2,transition=20)"  >
+    <script language="JavaScript">nextAD()</script>
+
+    <div style="position:absolute; left:0%; top:0%; width:100%; height:5%;">
+    <table id="banner" style="width:100%; height:100%; font-size:20px" bgcolor="#d0d0d0">
+        <tr>
+        <td align="center" style="width:80%"><a href="../" title="返回首页"><img src="/static/pics/shouye.png"/></a></td>
+        <td align="center"></td>
+        <td align="center"></td>
+        <td align="center"></td>
+        <td align="center"></td>
+        <td align="center"></td>
+        <td align="center"></td>
+        <td align="center"></td>
+        <td align="center"><a href="../acount/" title="注册"><img src="/static/pics/zhanghu.png"/></a></td>
+        <td align="center"></td>
+        </tr>
+    </table>
+    </div>
+
+
+    <div id="e_in" style="position:absolute; left:80%; top:70%">
+        <form name="fm1" method="post">
+            {% csrf_token %}
+            <input name="uname" type="text" placeholder="user NAME" style="position:absolute; left:0px; top:0px;height:40px;width:200px; ">
+            <input name="ukey" type="password" placeholder="user KEY" style="position:absolute; left:0px; top:60px;height:40px;width:200px; ">
+            <input type="submit" value="L O G I N"  style="position:absolute; left:0px; top:140px;height:40px;width:200px; background-color: #c0f0e0; font-size:25px;">
+        </form>
+
+    </div>
+
+
+</div>
+</body>
+
+
+
+</html>
+

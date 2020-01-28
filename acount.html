@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style type="text/css">
+    table .white {color:#ffffff}
+    .thtdv{width:100%;text-align:center;}
+    .thtdv_img{max-width:100%;height:auto;}
+    </style>
+    <script type="text/javascript" src="/static/js/jquery-3.4.1.js"></script>
+</head>
+<body  bgcolor="#202020">
+<div id="bk" class="thtdv">
+    <div style="position:absolute; left:0%; top:0%; width:100%; height:5%;">
+    <table id="banner" style="width:100%; height:100%; font-size:20px" bgcolor="#d0d0d0">
+        <tr>
+        <td align="center" style="width:80%"><a href="../" title="返回首页"><img src="/static/pics/shouye.png"/></a></td>
+        <td align="center"></td>
+        <td align="center"></td>
+        <td align="center"></td>
+        <td align="center"></td>
+        <td align="center"></td>
+        <td align="center"></td>
+        <td align="center"></td>
+        <td align="center"><a href="../acount/" title="账户信息"><img src="/static/pics/zhanghu.png"/></a></td>
+        <td align="center"><a href="../" title="退出登录"><img src="/static/pics/tuichu.png"/></a></td>
+        </tr>
+    </table>
+    </div>
+    <div style="position:absolute; left:10%; top:15%; width:100%; height:85%;">
+    <form name="fmact" method="post" action="../acount/" >
+        {% csrf_token %}
+        <input name="uname" type="text" placeholder="姓名，未曾用过，不可与密码相同" style="position:absolute; left:5%; top:5%;height:5%;width:20%; font-size:30px;">
+        <input name="ukey" type="password" placeholder="密码，至少5位，不可与用户名相同" style="position:absolute; left:5%; top:15%;height:5%;width:20%; font-size:30px;">
+        <input name="ukey2" type="password" placeholder="重复密码，至少5位，与密码相同" style="position:absolute; left:5%; top:25%;height:5%;width:20%; font-size:30px;">
+        <input type="submit" value="提交"  style="position:absolute; left:5%; top:45%;height:5%;width:6%; background-color: orange; font-size:30px;">
+    </form>
+        <span style="position:absolute; left:35%; top:5%; color: orange; font-size:40px;">{{slogan}}</span>
+    <input type="button" value="重填"  style="position:absolute; left:15%; top:45%;height:5%;width:6%; background-color: orange; font-size:30px;" onclick=javascrtpt:redo();>
+    <script>
+        function redo(){ window.location.href='../acount/'; }
+    </script>
+        <input type="button" value="放弃"  style="position:absolute; left:25%; top:45%;height:5%;width:6%; background-color: orange; font-size:30px;" onclick=javascrtpt:cancel();>
+    <script>
+        function cancel(){ window.location.href='../'; }
+    </script>
+    </div>
+</div>
+</body>
+</html>

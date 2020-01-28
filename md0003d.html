@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="/static/js/echarts.js"></script>
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/jquery.toolbar.js"></script>
+    <style type="text/css">
+    table .white {color:#ffffff}
+    .thtdv{width:100%;text-align:center;}
+    .thtdv_img{max-width:100%;height:auto;}
+    </style>
+</head>
+<body bgcolor="#202020">
+<div id="bk" class="thtdv">
+    <div style="position:absolute; left:0%; top:0%; width:100%; height:5%;">
+    <table id="banner" style="width:100%; height:100%; font-size:20px" bgcolor="#d0d0d0">
+        <tr>
+        <td align="center" style="width:80%"><a href="../market/" title="返回市场"><img src="/static/pics/shichang.png"/></a></td>
+        <td align="center"></td>
+        <td align="center"></td>
+        <td align="center"></td>
+        <td align="center"></td>
+        <td align="center"></td>
+        <td align="center"></td>
+        <td align="center"></td>
+        <td align="center"><a href="../acount/" title="账户信息"><img src="/static/pics/zhanghu.png"/></a></td>
+        <td align="center"><a href="../" title="退出登录"><img src="/static/pics/tuichu.png"/></a></td>
+        </tr>
+    </table>
+    </div>
+
+    <div style="position:absolute; left:5%; top:10%; width:100%; height:100%;">
+        <p style="position:absolute; left:0%; top:0%; font-size:30px; color:orange;"><span><br>模型rest API格式输入数据接口：</br>http://127.0.0.1:8000/md0003m?uid=***&ukey=***&deviceid=***&Vin=***&Iin=***&Tcin=***&Tcout=***&Tein=***&Teout=***&Eflow=***</span></p>
+        <p style="position:absolute; left:0%; top:20%; font-size:30px; color:orange;"><span><br>模型json格式输出数据接口：</br>paralist = [{'power out': xxx, 'power error': xxx,'Tcalm': xxx,'Tealm': xxx}]</span></p>
+        <p style="position:absolute; left:0%; top:30%; font-size:30px; color:orange;"><span><br>模型的数据库存储字段：</br>{{mdinfo|safe}}</span></p>
+        <p style="position:absolute; left:0%; top:45%; font-size:30px; color:orange;"><span>请注意，系统为您分配的DVC_id：{{mdvcid|safe}}</span></p>
+        <p style="position:absolute; left:0%; top:50%; font-size:30px; color:orange;"><span><img src="/static/pics/md000303.pngjpg"/></span></p>
+
+
+    </div>
+</div>
+
+</body>
+</html>
